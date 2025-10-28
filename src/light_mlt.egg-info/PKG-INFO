@@ -1,0 +1,24 @@
+Metadata-Version: 2.4
+Name: light-mlt
+Version: 0.1.0
+Summary: Lightweight preprocessing and reversible Modular Linear Tokenization (MLT) utilities for categorical and continuous data.
+Author-email: Tcharlies Schmitz <tcharliesschmitz@gmail.com>
+License: MIT
+Project-URL: Homepage, https://pypi.org/project/light-mlt/
+Project-URL: Repository, https://github.com/tcharliesschmitz/light-mlt
+Project-URL: Issues, https://github.com/tcharliesschmitz/light-mlt/issues
+Project-URL: Documentation, https://packaging.python.org/en/latest/flow/
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy>=1.23
+Requires-Dist: pandas>=2.0
+Requires-Dist: scikit-learn>=1.2
+Dynamic: license-file
