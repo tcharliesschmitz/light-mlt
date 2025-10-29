@@ -1,3 +1,10 @@
+
+[![PyPI version](https://img.shields.io/pypi/v/light-mlt?color=orange)](https://pypi.org/project/light-mlt/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![GitHub](https://img.shields.io/badge/github-light--mlt-black?logo=github)](https://github.com/tcharliesschmitz/light-mlt)
+
+
+
 # 🧩 Module: `light_mlt.py`
 
 Lightweight, reproducible preprocessing pipeline for tabular datasets — integrating **categorical encoding via Modular Linear Tokenization (MLT)** and **continuous feature scaling**.  
