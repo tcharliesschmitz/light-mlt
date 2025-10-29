@@ -1,25 +1,31 @@
 [build-system]
-requires = ["setuptools>=61.0", "wheel"]
+requires = ["setuptools>=72.1", "wheel", "build"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "light-mlt"
-version = "0.1.0"
+version = "0.1.2"
 description = "Lightweight preprocessing and reversible Modular Linear Tokenization (MLT) utilities for categorical and continuous data."
 readme = "README.md"
+
 authors = [
   { name = "Tcharlies Schmitz", email = "tcharliesschmitz@gmail.com" }
 ]
-license = { text = "MIT" }
+
+# PEP 639: licença em subtabela, evita o campo legado 'license-file'
+[project.license]
+text = "MIT"
+
 requires-python = ">=3.9"
+
 dependencies = [
   "numpy>=1.23",
   "pandas>=2.0",
   "scikit-learn>=1.2"
 ]
+
 classifiers = [
   "Programming Language :: Python :: 3",
-  "Programming Language :: Python :: 3.9",
   "License :: OSI Approved :: MIT License",
   "Operating System :: OS Independent",
   "Intended Audience :: Science/Research",
@@ -30,5 +36,13 @@ classifiers = [
 [project.urls]
 "Homepage" = "https://pypi.org/project/light-mlt/"
 "Repository" = "https://github.com/tcharliesschmitz/light-mlt"
-"Issues" = "https://github.com/tcharliesschmitz/light-mlt/issues"
-"Documentation" = "https://packaging.python.org/en/latest/flow/"
+"Bug Tracker" = "https://github.com/tcharliesschmitz/light-mlt/issues"
+"Documentation" = "https://github.com/tcharliesschmitz/light-mlt#readme"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+include-package-data = true
+license-files = ["LICENSE"]
+
+[tool.setuptools.packages.find]
+where = ["src"]

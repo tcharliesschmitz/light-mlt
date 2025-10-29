@@ -1,13 +1,10 @@
-LICENSE
 README.md
 pyproject.toml
-setup.py
 src/light_mlt/__init__.py
 src/light_mlt/light_mlt.py
 src/light_mlt.egg-info/PKG-INFO
 src/light_mlt.egg-info/SOURCES.txt
 src/light_mlt.egg-info/dependency_links.txt
-src/light_mlt.egg-info/requires.txt
 src/light_mlt.egg-info/top_level.txt
 tests/test_fit_transform_basic.py
 tests/test_inverse_transform.py
