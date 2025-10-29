@@ -41,14 +41,45 @@ Each `fit()` operation generates or updates the following artifacts (default dir
 
 ---
 
-## ⚙️ Core Function: `fit`
+---
+
+## 🧪 Detailed Examples
+
+Below are complete examples demonstrating how to use `light_mlt.py` for preprocessing, transformation, and reversibility.
+
+---
+
+### **1️⃣ Basic Usage**
 
 ```python
-from light_mlt import fit
+import pandas as pd
+from light_mlt import fit_transform, inverse_transform
 
-fit(
+# Example dataset
+df = pd.DataFrame({
+    "city": ["São Paulo", "Curitiba", "São Paulo", "Florianópolis"],
+    "vehicle": ["Truck", "Car", "Car", "Bus"],
+    "mileage": [12.4, 25.8, 31.5, 18.7],
+})
+
+print("=== Original Data ===")
+print(df)
+
+# --- Step 1: Fit + Transform ---
+df_t, path, token_cols, report = fit_transform(
     df,
     categorical_cols=["city", "vehicle"],
-    continuous_cols=["age", "salary"],
+    continuous_cols=["mileage"],
     dir="light_mlt_artifacts/"
 )
+
+print("\n=== Transformed Data ===")
+print(df_t.head())
+
+print("\nGenerated token columns:", token_cols)
+print("Report:", report)
+
+# --- Step 2: Inverse Transform ---
+df_rec = inverse_transform(df_t, dir="light_mlt_artifacts/")
+print("\n=== Reconstructed Data ===")
+print(df_rec)
