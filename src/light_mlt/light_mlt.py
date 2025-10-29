@@ -63,7 +63,7 @@ def fit(
     df: pd.DataFrame,
     categorical_cols: list[str],
     continuous_cols: list[str],
-    dir: str = "model_autoencoder/",
+    dir: str = "light_mlt_artifacts/",
     unk_token: str = "__UNK__",
     mlt_p: int = 13,
     mlt_n: int = 6,
@@ -172,7 +172,7 @@ def fit(
 # =========================
 def transform(
     df: pd.DataFrame,
-    dir: str = "model_autoencoder/",
+    dir: str = "light_mlt_artifacts/",
     output_csv: str | None = None,
     drop_original: bool = True,
 ):
@@ -243,7 +243,7 @@ def transform(
 # =========================
 def inverse_transform(
     df_t: pd.DataFrame,
-    dir: str = "model_autoencoder/",
+    dir: str = "light_mlt_artifacts/",
 ) -> pd.DataFrame:
     """
     Reconstrói o DataFrame original (categóricas e contínuas) a partir do transformado,
@@ -288,7 +288,7 @@ def inverse_transform(
 # =========================
 def fit_transform(
     df: pd.DataFrame,
-    dir: str = "model_autoencoder/",
+    dir: str = "light_mlt_artifacts/",
     # Só precisa passar as listas na 1ª vez; depois vêm do schema salvo
     categorical_cols: list[str] | None = None,
     continuous_cols: list[str] | None = None,
@@ -493,7 +493,7 @@ def random_invertible_matrix_mod_p(n: int, p: int, rng: np.random.Generator) -> 
 def apply_mlt_tokens(
     df_processed: pd.DataFrame,
     categorical_cols: list[str],
-    dir: str = "model_autoencoder/",
+    dir: str = "light_mlt_artifacts/",
     p: int | None = None,
     n: int | None = None,
     mlt_config: dict | None = None,
@@ -586,6 +586,6 @@ def mlt_decode_tokens_for_column(
     ids = from_base_p_matrix(D, p)
     return ids
 
-def load_mlt_params(dir: str = "model_autoencoder/") -> dict:
+def load_mlt_params(dir: str = "light_mlt_artifacts/") -> dict:
     with open(os.path.join(dir, "mlt_params.pkl"), "rb") as f:
         return pickle.load(f)
